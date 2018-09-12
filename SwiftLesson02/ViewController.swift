@@ -6,12 +6,12 @@
 //  Copyright © 2018年 kohei.ueda. All rights reserved.
 //
 
-//Image Viewの画像は適当な物を使ってください。
+// Image Viewの画像は適当な物を使ってください。
 
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+
     class Item : NSObject {
         let title: String
         let explanation: String
@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //ダミーデータ作成
+        // ダミーデータ作成
         for i in 1...20 {
             items.append(Item(title: "タイトル\(i)", explanation: "説明\(i)"))
         }
@@ -37,32 +37,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView?.dataSource = self
         tableView?.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
-    //データを渡す
+    // データを渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detail" {
-        let item = items[(tableView?.indexPathForSelectedRow?.row)!]
-        let controller = segue.destination as! DetailViewController
+            let row = (tableView?.indexPathForSelectedRow?.row)!
+            let item = items[row]
+            let controller = segue.destination as! DetailViewController
             controller.labelTitle = item.title
             controller.labelExplanation = item.explanation
         }
     }
     
-    //Sectionの数を決める
+    
+    // MARK: - UITableViewDatasource
+    
+    // Sectionの数を決める
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    //一つのSectionの中に入れるCellの数を決める
+    // 一つのSectionの中に入れるCellの数を決める
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    //Cellの内容を決める
+    // Cellの内容を決める
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell")!
         let item = items[indexPath.row]
@@ -76,7 +76,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    //Cellの高さを決める
+    
+    // MARK: - UITableViewDelegate
+    
+    // Cellの高さを決める
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
     }
