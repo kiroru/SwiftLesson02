@@ -15,14 +15,14 @@ class DetailViewController: UIViewController {
     var labelTitle: String?
     var labelExplanation: String?
     
-    @IBOutlet var tv1:UILabel?
-    @IBOutlet var tv2:UILabel?
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var explanationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tv1?.text = labelTitle
-        tv2?.text = labelExplanation
+        titleLabel?.text = labelTitle
+        explanationLabel?.text = labelExplanation
     }
 
     @IBAction func close() {

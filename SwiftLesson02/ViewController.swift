@@ -67,11 +67,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell")!
         let item = items[indexPath.row]
         
-        let tv1 = cell.viewWithTag(2) as! UILabel
-        tv1.text = item.title
+        let titleLabel = cell.viewWithTag(2) as! UILabel
+        titleLabel.text = item.title
         
-        let tv2 = cell.viewWithTag(3) as! UILabel
-        tv2.text = item.explanation
+        let explanationLabel = cell.viewWithTag(3) as! UILabel
+        explanationLabel.text = item.explanation
         
         return cell
     }
