@@ -139,8 +139,8 @@
                         <viewLayoutGuide key="safeArea" id="wVc-Yt-IGn"/>
                     </view>
                     <connections>
-                        <outlet property="tv1" destination="gTA-RE-eUf" id="2Jg-iH-mbH"/>
-                        <outlet property="tv2" destination="kYt-L7-7b3" id="KBp-dm-7gp"/>
+                        <outlet property="titleLabel" destination="gTA-RE-eUf" id="2Jg-iH-mbH"/>
+                        <outlet property="explanationLabel" destination="kYt-L7-7b3" id="KBp-dm-7gp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtF-sF-Smu" userLabel="First Responder" sceneMemberID="firstResponder"/>
