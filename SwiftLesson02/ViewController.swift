@@ -12,7 +12,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    class Item : NSObject {
+    class Item {
         let title: String
         let explanation: String
         
@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var items:[Item] = []
     
-    @IBOutlet var tableView:UITableView? = nil
+    @IBOutlet var tableView:UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
